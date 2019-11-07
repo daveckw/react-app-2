@@ -27,7 +27,12 @@ class Form extends React.Component {
             
         } 
         this.props.createUser(this.state);
-    }
+        this.setState({
+            username: '',
+            email: '',
+            phone: ''
+        })
+        }
 
     render(){
         return (
@@ -38,6 +43,7 @@ class Form extends React.Component {
                 <input
                     id="username"
                     name="username"
+                    value={this.state.username}
                     onChange={this.handleChange}
                     type="text" />
                 <br></br>
@@ -45,6 +51,7 @@ class Form extends React.Component {
                 <input
                     id="email"
                     name="email"
+                    value={this.state.email}
                     onChange={this.handleChange}
                     type="text" />
                 <br></br>
@@ -52,6 +59,7 @@ class Form extends React.Component {
                 <input
                     id="phone"
                     name="phone"
+                    value={this.state.phone}
                     onChange={this.handleChange}
                     type="text" />
                 <br></br>
